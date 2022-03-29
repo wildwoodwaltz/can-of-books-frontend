@@ -25,7 +25,7 @@ export default class LoginButton extends Component {
       >        <Modal.Header closeButton>
           <Modal.Title>Log In</Modal.Title>
         </Modal.Header>
-      <LoginForm/>
+      <LoginForm loginHandler={this.props.loginHandler}/>
       </Modal>
       </>
     )
