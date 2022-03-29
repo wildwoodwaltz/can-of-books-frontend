@@ -17,12 +17,15 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: '',
+      email:'',
     }
   }
 
-  loginHandler = (user) => {
+  loginHandler = (user, email) => {
+    console.log(user, email)
     this.setState({
-      user,
+      user: user,
+      email: email,
     })
   }
 

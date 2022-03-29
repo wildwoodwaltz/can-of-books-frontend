@@ -4,11 +4,9 @@ class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Form: [{
         user: '',
-        email: '',
-      }]
-    }
+        email:'',
+      }
   };
 
   render() {
@@ -16,12 +14,15 @@ class LoginForm extends Component {
     let onChangeHandle = (event) => {
       let name = event.target.name;
       let val = event.target.value;
+      console.log({[name]: val})
       this.setState({ [name]: val });
     }
     let submitFunction = (e) => {
       e.preventDefault();
-      let a = this.state.form
-      this.props.loginHandler(a)
+      let a = this.state.user
+      let b = this.state.email
+      console.log(a);
+      this.props.loginHandler(a,b)
     }
 
     return (
@@ -29,13 +30,13 @@ class LoginForm extends Component {
         <h3>Sign In</h3>
         <div className="form-group">
           <label>User Name</label>
-          <input type="text" name="Form.user" className="form-control" placeholder="Enter User Name" onChange={onChangeHandle} />
+          <input type="text" name="user" className="form-control" placeholder="Enter User Name" onChange={onChangeHandle} />
         </div>
         <div className="form-group">
           <label>E-mail</label>
-          <input type="email" name="Form.email" className="form-control" placeholder="Enter E-Mail" onChange={onChangeHandle} />
+          <input type="email" name="email" className="form-control" placeholder="Enter E-Mail" onChange={onChangeHandle} />
         </div>
-        <button type="submit" className="btn btn-primary btn-block" onSubmit={submitFunction}>Submit</button>
+        <button className="btn btn-primary btn-block" onClick={submitFunction}>Submit</button>
       </form>
     );
   }
