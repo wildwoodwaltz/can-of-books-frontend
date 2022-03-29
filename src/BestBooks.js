@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Carousel, Button, CarouselItem, Modal } from 'react-bootstrap';
 import BookFormModal from './BookFormModal';
-const BurnBook = require('./functions/RemoveBook')
+
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -27,6 +27,18 @@ class BestBooks extends React.Component {
       console.log(this.state.books)
     } catch (error) {
       console.log('error', error.response)
+    }
+  }
+
+  burnBook = async (id) => {
+    try{
+      await axios.delete(`${process.env.REACT_APP_SERVER}/books/${id}`);
+      let updatedBooks = this.state.books.filter(book => book._id !== id);
+      this.setState ({
+        books: updatedBooks,
+      })
+    }catch(error){
+      console.log(error.response)
     }
   }
 
@@ -62,7 +74,7 @@ class BestBooks extends React.Component {
       <Carousel.Item key={book._id}>
         <p>{book.title}</p>
         <p>{book.description}</p>
-        <Button onClick={BurnBook(book._id)} />
+        <Button onClick={this.burnBook}>Burn</Button>
       </Carousel.Item>
     ))
 
@@ -74,7 +86,7 @@ class BestBooks extends React.Component {
           <Carousel>
             {carouselItems}
             <CarouselItem>
-              <Button onClick={this.showform} />
+              <Button onClick={this.showform}>Add New Book</Button>
             </CarouselItem>
           </Carousel>
 
