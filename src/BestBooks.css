@@ -4,10 +4,6 @@
   background-color: aliceblue;
   align-items: center;
 }
-.addBookButton {
-  margin-top: 50vh;
-  margin-left: 50vw;
-}
 
 .carouselItem {
   align-items: center;
@@ -56,7 +52,8 @@
   opacity: 0;
   transition: opacity .3s ease-in-out;
   border-radius: 10px;
-  margin: .2rem .1vw;
+    margin-top: 50vh;
+    margin-left: 50vw;
 }
 
 
