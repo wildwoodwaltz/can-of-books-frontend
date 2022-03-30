@@ -2,7 +2,8 @@
 # Project Name
 
 **Author**: Tyler Egashira and Eden Brekke
-**Version**: 1.0.0 
+**Version**: 1.0.1
+
 
 ## Overview
 
@@ -23,10 +24,32 @@ CSS 3
 
 ## Change Log
 
-3-23-2022 - Initial Deployment
+3-23-2022 - Initial 
+3-29-2022 - Added Write/Delete Functionality to Application
 
 ## Estimates
 <!-- See below -->
+Name of feature: User Data and conditional login rendering
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:35PM
+
+Finish time: The next day...
+
+Actual time needed to complete: 4hr+
+
+---
+
+Name of feature: Write/Delete
+
+Estimate of time needed to complete: 2hours
+
+Start time: 3:15PM
+
+Finish time: 5:43PM
+
+Actual time needed to complete: 2:30
 
 ## Credit and Collaborations
 
