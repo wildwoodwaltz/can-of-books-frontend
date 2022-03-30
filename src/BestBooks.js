@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { Carousel, Button, CarouselItem, Modal } from 'react-bootstrap';
 import BookFormModal from './BookFormModal';
+import Book from './Book';
+import './BestBooks.css';
 
 
 class BestBooks extends React.Component {
@@ -31,6 +33,7 @@ class BestBooks extends React.Component {
   }
 
   burnBook = async (id) => {
+    console.log(id);
     try{
       await axios.delete(`${process.env.REACT_APP_SERVER}/books/${id}`);
       let updatedBooks = this.state.books.filter(book => book._id !== id);
@@ -57,7 +60,7 @@ class BestBooks extends React.Component {
       bookformModal: true,
     })
   }
-  hideForm = () => {
+  onHide = () => {
     this.setState({
       bookformModal: false,
     })
@@ -71,10 +74,11 @@ class BestBooks extends React.Component {
 
     /* TODO: render user's books in a Carousel */
     let carouselItems = this.state.books.map(book => (
-      <Carousel.Item key={book._id}>
-        <p>{book.title}</p>
-        <p>{book.description}</p>
-        <Button onClick={this.burnBook}>Burn</Button>
+      <Carousel.Item className="carouselItem" key={book._id}>
+        <Book 
+          book = {book}
+          burnBook = {this.burnBook}
+        />
       </Carousel.Item>
     ))
 
@@ -83,25 +87,25 @@ class BestBooks extends React.Component {
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
 
         {this.state.books.length ? (
-          <Carousel>
+          <Carousel >
             {carouselItems}
-            <CarouselItem>
-              <Button onClick={this.showform}>Add New Book</Button>
+            <CarouselItem className="carouselContainer">
+              <Button className="addBookButton" onClick={this.showForm}>Add New Book</Button>
             </CarouselItem>
           </Carousel>
 
         ) : (
           <>
             <h3>No Books Found :(</h3>
-            <Button onClick={this.showform} />
+            <Button className="addBookButton" onClick={this.showForm}>Add New Book</Button>
           </>
         )}
-        <Modal show={this.state.bookformModal}>
-          <Modal.Header closeButton={this.hideForm}>
+        <Modal show={this.state.bookformModal} onHide={this.onHide}>
+          <Modal.Header closeButton>
             <Modal.Title>Log In</Modal.Title>
           </Modal.Header>
           <BookFormModal
-            addBook={this.addBook} />
+            addBook={this.addBook} onHide={this.onHide} />
         </Modal>
       </>
     )

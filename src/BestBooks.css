@@ -1,0 +1,25 @@
+.carouselContainer {
+  height: 70vh;
+  border: 1px solid black;
+  background-color: aliceblue;
+  align-items: center;
+}
+.addBookButton {
+  margin-top: 50vh;
+  margin-left: 50vw;
+}
+
+.carouselItem {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.carouselItem p:first-child {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.carouselItem p:last-child {
+  line-height: 25px;
+}
