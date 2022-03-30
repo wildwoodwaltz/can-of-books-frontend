@@ -55,6 +55,19 @@ class BestBooks extends React.Component {
       console.log(error.response)
     }
   }
+
+updateBook = async (bookToUpdate)=> {
+  try{
+    let freshBook = await axios.put(`${process.env.REACT_APP_SERVER}/books/${bookToUpdate._id}`, bookToUpdate);
+  let updatedBookData = this.state.books.map(currentBooks => {
+    return currentBooks._id === bookToUpdate._id ? freshBook.data : currentBooks;
+  })
+  this.setState({books: updatedBookData})
+  } catch(error) {
+    console.log(error.message);
+  }
+}
+
   showForm = () => {
     this.setState({
       bookformModal: true,
@@ -78,6 +91,7 @@ class BestBooks extends React.Component {
         <Book 
           book = {book}
           burnBook = {this.burnBook}
+          updateBook = {this.updateBook}
         />
       </Carousel.Item>
     ))
@@ -87,7 +101,7 @@ class BestBooks extends React.Component {
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
 
         {this.state.books.length ? (
-          <Carousel >
+          <Carousel interval={null} >
             {carouselItems}
             <CarouselItem className="carouselContainer">
               <Button className="addBookButton" onClick={this.showForm}>Add New Book</Button>
