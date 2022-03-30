@@ -8,7 +8,7 @@ class Book extends React.Component {
       <div className="carouselContainer">
       <p>{this.props.book.title}</p>
       <p>{this.props.book.description}</p>
-      <Button onClick={() => this.props.burnBook(this.props.book._id)}>Burn</Button>
+      <Button className="burn" onClick={() => this.props.burnBook(this.props.book._id)}>Burn The Book!</Button>
       </div>
       </>
     )
