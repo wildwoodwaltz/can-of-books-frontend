@@ -2,7 +2,7 @@
 # Project Name
 
 **Author**: Tyler Egashira and Eden Brekke
-**Version**: 1.0.1
+**Version**: 1.0.3
 
 
 ## Overview
@@ -25,7 +25,10 @@ CSS 3
 ## Change Log
 
 3-23-2022 - Initial 
-3-29-2022 - Added Write/Delete Functionality to Application
+
+3-29-2022 - Added Write/Delete Functionality 
+
+3-30-2022 - Added Update Functionality
 
 ## Estimates
 <!-- See below -->
@@ -51,6 +54,21 @@ Finish time: 5:43PM
 
 Actual time needed to complete: 2:30
 
+---
+
+Name of feature: Update
+
+Estimate of time needed to complete: 35min
+
+Start time: 1:15PM
+
+Finish time: 2:10PM
+
+Actual time needed to complete: 55 min
+
 ## Credit and Collaborations
 
 Eden Brekke for being a fantastic partner!
+
+- [Rainbow Button](https://dev.to/webdeasy/top-20-css-buttons-animations-f41)
+- [Flaming Button](https://codemyui.com/css-only-flaming-button/)
