@@ -7,11 +7,11 @@ import LogoutButton from './LogoutButton'
 class Header extends React.Component {
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand>My Favorite Books</Navbar.Brand>
+      <Navbar className="nav-bar" collapseOnSelect expand="lg" >
+        <Navbar.Brand className="nav-brand">THESE ARE THE BEST BOOKS EVER</Navbar.Brand>
         <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
         {/* TODO: if the user is logged in, render a navigation link to profile page */}
-        <NavItem>{this.props.user?<Link to="/Profile">Profile</Link>:''}</NavItem>
+        <NavItem>{this.props.user?<Link to="/Profile" className="nav-link">Profile</Link>:''}</NavItem>
         {/* TODO: if the user is logged in, render the `LogoutButton` */}
         <NavItem>{this.props.user?<LogoutButton onLogout={this.props.onLogout}/>:''}</NavItem>
       </Navbar>
