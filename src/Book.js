@@ -39,7 +39,8 @@ class Book extends React.Component {
           </Modal>
 
       <Button onClick={() => this.showUpdateForm()}>Update Book</Button>
-      <Button onClick={() => this.props.burnBook(this.props.book._id)}>Burn Book</Button>
+      <Button className="burn" onClick={() => this.props.burnBook(this.props.book._id)}>Burn The Book!</Button>
+
       </div>
 
 
