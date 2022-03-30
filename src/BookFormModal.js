@@ -35,7 +35,7 @@ class BookFormModal extends React.Component {
           <Form.Group controlId="status">
             <Form.Check type="checkbox" label="I have read this book" />
           </Form.Group>
-          <Button type="submit" >Add Book to my Shelf</Button>
+          <Button className="loginButton" type="submit" >Add Book to my Shelf</Button>
         </Form>
       </Container>
     );

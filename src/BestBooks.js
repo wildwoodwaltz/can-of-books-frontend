@@ -101,7 +101,7 @@ class BestBooks extends React.Component {
           </>
         )}
         <Modal show={this.state.bookformModal} onHide={this.onHide}>
-          <Modal.Header closeButton>
+          <Modal.Header className="modal-head"closeButton>
             <Modal.Title>Log In</Modal.Title>
           </Modal.Header>
           <BookFormModal

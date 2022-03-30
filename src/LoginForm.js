@@ -36,7 +36,7 @@ class LoginForm extends Component {
           <label>E-mail</label>
           <input type="email" name="email" className="form-control" placeholder="Enter E-Mail" onChange={onChangeHandle} />
         </div>
-        <button className="btn btn-primary btn-block" onClick={submitFunction}>Submit</button>
+        <button className="loginButton" style={{width:"70%", justifyContent:"center"}} onClick={submitFunction}>Submit</button>
       </form>
     );
   }
