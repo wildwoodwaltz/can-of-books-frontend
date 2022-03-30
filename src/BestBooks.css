@@ -39,6 +39,8 @@
   border-radius: 10px;
   margin: .2rem 0.3vw;
   margin-top: 10px;
+  margin-left: 50vw;
+  margin-bottom: 20vh;
 }
 
 .addBookButton:before {
