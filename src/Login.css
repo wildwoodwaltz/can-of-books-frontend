@@ -1,7 +1,9 @@
 .card{
   margin: auto;
   text-align: center;
+  background: linear-gradient(#a9ddee, #B9FBC0);
 }
+
 
 .loginButton {
   width: .2rem .1vw;
@@ -22,7 +24,7 @@
 
 .loginButton:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #F1C0E8, #FDE4CF, #FBF8CC,  #B9FBC0, #A3C4F3, #90DBF4, #8EECF5, #CFBAF0, #F1C0E8);
   position: absolute;
   top: -2px;
   left:-2px;
@@ -80,3 +82,6 @@
   text-align: center;
   justify-content: center;
 }
+
+
+/*#ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000*/
