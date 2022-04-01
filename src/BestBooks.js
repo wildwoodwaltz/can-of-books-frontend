@@ -19,10 +19,10 @@ class BestBooks extends React.Component {
 
   /* TODO: Make a GET request to your API to fetch books for the logged in user  */
   fetchBooks = async () => {
+    // HEY CAMERON HEY LOOK HERE HEY THIS IS THE TOKEN HEY! LISTEN! HELLO!
     const token = await this.props.auth0.getIdTokenClaims();
     const jwt = token.__raw;
-    // HEY CAMERON HEY LOOK HERE HEY THIS IS THE TOKEN HEY! LISTEN! HELLO!
-    //console.log(jwt);
+    console.log(jwt);
     try {
       let url = `${process.env.REACT_APP_SERVER}/books`
       console.log(url)
