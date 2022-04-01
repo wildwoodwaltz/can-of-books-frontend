@@ -4,6 +4,8 @@ import { Carousel, Button, CarouselItem, Modal } from 'react-bootstrap';
 import BookFormModal from './BookFormModal';
 import Book from './Book';
 import './BestBooks.css';
+import { withAuth0 } from "@auth0/auth0-react";
+
 
 
 class BestBooks extends React.Component {
@@ -17,6 +19,10 @@ class BestBooks extends React.Component {
 
   /* TODO: Make a GET request to your API to fetch books for the logged in user  */
   fetchBooks = async () => {
+    const token = await this.props.auth0.getIdTokenClaims();
+    const jwt = token.__raw;
+    // HEY CAMERON HEY LOOK HERE HEY THIS IS THE TOKEN HEY! LISTEN! HELLO!
+    //console.log(jwt);
     try {
       let url = `${process.env.REACT_APP_SERVER}/books`
       console.log(url)
@@ -67,6 +73,8 @@ updateBook = async (bookToUpdate)=> {
     console.log(error.message);
   }
 }
+
+
 
   showForm = () => {
     this.setState({
@@ -126,4 +134,4 @@ updateBook = async (bookToUpdate)=> {
   }
 }
 
-export default BestBooks;
+export default withAuth0(BestBooks);
