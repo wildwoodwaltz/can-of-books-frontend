@@ -66,6 +66,16 @@ Finish time: 2:10PM
 
 Actual time needed to complete: 55 min
 
+Name of feature: _______________Add Auth0 to App_________________
+
+Estimate of time needed to complete: ___30min__
+
+Start time: __2:30pm___
+
+Finish time: __3:00pm___
+
+Actual time needed to complete: __30min___
+
 ## Credit and Collaborations
 
 Eden Brekke for being a fantastic partner!
